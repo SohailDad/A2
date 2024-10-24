@@ -22,11 +22,11 @@
 
 ## 5-Recipe App
 
-![alt text](/Pictures/Recipe App with Navigation_1.PNG) 
+![alt text](/Pictures/Recipe_App_with_Navigation_1.PNG) 
 
-![alt text](/Pictures/Recipe App with Navigation_2.PNG)
+![alt text](/Pictures/Recipe_App_with_Navigation_2.PNG)
 
-![alt text](/Pictures/Recipe App with Navigation_3.PNG)
+![alt text](/Pictures/Recipe_App_with_Navigation_3.PNG)
 
 
 ## 6-Tip Calculator App
@@ -46,7 +46,8 @@
 
 ## 9-Dark Mode App
 
-![alt text](/Pictures/Dark_Mode_2.PNG) ![alt text](Dark_Mode_1.PNG)
+![alt text](/Pictures/Dark_Mode_2.PNG) 
+![alt text](/Pictures/Dark_Mode_1.PNG)
 
 
 
