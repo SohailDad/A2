@@ -9,9 +9,9 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage"; //npm install @react-native-async-storage/async-storage
 
-const API_KEY = "YOUR_API_KEY"; // Replace with your exchangeratesapi.io API key
+const API_KEY = "d288c060e9ea471ee55dd3c8"; // Replace with your API key
 
 export default function App() {
   const [amount, setAmount] = useState("");
@@ -20,13 +20,14 @@ export default function App() {
   const [convertedAmount, setConvertedAmount] = useState(null);
   const [favorites, setFavorites] = useState([]);
 
+  // Fetch conversion rate from API
   const getConversionRate = () => {
     fetch(
-      `https://api.exchangeratesapi.io/latest?base=${fromCurrency}&symbols=${toCurrency}&apikey=${API_KEY}`,
+      `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${fromCurrency}`,
     )
       .then((response) => response.json())
       .then((data) => {
-        const rate = data.rates[toCurrency];
+        const rate = data.conversion_rates[toCurrency];
         const result = (parseFloat(amount) * rate).toFixed(2);
         setConvertedAmount(result);
       })
@@ -35,6 +36,7 @@ export default function App() {
       });
   };
 
+  // Save favorite currency pair
   const saveFavorite = async () => {
     const pair = `${fromCurrency} to ${toCurrency}`;
     const newFavorites = [...favorites, pair];
@@ -42,6 +44,7 @@ export default function App() {
     await AsyncStorage.setItem("favorites", JSON.stringify(newFavorites));
   };
 
+  // Load saved favorite currency pairs
   const loadFavorites = async () => {
     const savedFavorites = await AsyncStorage.getItem("favorites");
     if (savedFavorites) {
@@ -50,7 +53,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    loadFavorites();
+    loadFavorites(); // Load saved favorites on app load
   }, []);
 
   return (
@@ -74,7 +77,7 @@ export default function App() {
         <Picker.Item label="USD" value="USD" />
         <Picker.Item label="EUR" value="EUR" />
         <Picker.Item label="GBP" value="GBP" />
-        {/* Add more currencies as needed */}
+        {/* Add more currencies */}
       </Picker>
 
       <Text style={styles.label}>To</Text>
@@ -86,7 +89,7 @@ export default function App() {
         <Picker.Item label="EUR" value="EUR" />
         <Picker.Item label="USD" value="USD" />
         <Picker.Item label="GBP" value="GBP" />
-        {/* Add more currencies as needed */}
+        {/* Add more currencies */}
       </Picker>
 
       <Button title="Convert" onPress={getConversionRate} />
