@@ -23,9 +23,7 @@
 ## 5-Recipe App
 
 ![alt text](/Pictures/Recipe_App_with_Navigation_1.PNG) 
-
 ![alt text](/Pictures/Recipe_App_with_Navigation_2.PNG)
-
 ![alt text](/Pictures/Recipe_App_with_Navigation_3.PNG)
 
 
