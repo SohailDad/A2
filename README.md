@@ -21,11 +21,11 @@
 
 
 ## 5-Recipe App
-1.
+
 ![alt text](/Pictures/Recipe_App_with_Navigation_1.PNG) 
-2.
+
 ![alt text](/Pictures/Recipe_App_with_Navigation_2.PNG)
-3.
+
 ![alt text](/Pictures/Recipe_App_with_Navigation_3.PNG)
 
 
